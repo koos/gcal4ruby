@@ -23,8 +23,9 @@ class Time
   end
   
   def self.parse_complete(value)
+    value = self.parse(value).complete
     d, h = value.split("T")
-    return Time.parse(d+" "+h) #.gsub("Z", ""))
+    return Time.parse(d+" "+h.gsub("Z", ""))
   end
 end
 
